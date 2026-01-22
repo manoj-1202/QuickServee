@@ -34,7 +34,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-accent rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-accent rounded-full mb-1"
             >
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               <span className="text-sm font-medium text-accent-foreground">
@@ -43,9 +43,9 @@ const HeroSection = () => {
             </motion.div>
 
             {/* Headline */}
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+            <h1 className="font-display text-3xl md:text-5xl lg:text-4xl font-bold text-foreground leading-tight mb-6">
               {BUSINESS.name} –{" "}
-              <span className="text-gradient">Fast & Reliable</span>{" "}
+              <span className="text-primary">Fast & Reliable</span>{" "}
               Electronic Services
             </h1>
 
@@ -135,7 +135,7 @@ const HeroSection = () => {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-8 -right-8 bg-card rounded-2xl shadow-lg p-4 border border-border"
+                className="absolute -top-8 -right-8 bg-card rounded-2xl shadow-lg p-4 border border-border mt-8"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
@@ -151,7 +151,7 @@ const HeroSection = () => {
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute -bottom-8 -left-8 bg-card rounded-2xl shadow-lg p-4 border border-border"
+                className="absolute -bottom-12 -left-8 bg-card rounded-2xl shadow-lg p-4 border border-border"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">

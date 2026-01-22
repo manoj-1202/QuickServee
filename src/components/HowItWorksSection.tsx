@@ -17,7 +17,7 @@ const HowItWorksSection = () => {
             Simple Process
           </span>
           <h2 className="section-title text-foreground mb-4">
-            How <span className="text-gradient">QuickServe</span> Works
+            How <span className="text-primary">QuickServe</span> Works
           </h2>
           <p className="section-subtitle mx-auto">
             Get your electronics fixed in three simple steps. Fast, easy, and reliable service every time.

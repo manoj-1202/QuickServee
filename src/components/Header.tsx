@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X } from "lucide-react";
 import { BUSINESS, PHONE_NUMBERS } from "@/lib/constants";
@@ -6,6 +6,26 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("#services")
+
+  // Scroll Active 
+    useEffect(() => {
+      const handleScroll = () => {
+        navLinks.forEach((link) => {
+          const section = document.querySelector(link.href)
+          if (!section) return
+
+          const rect = section.getBoundingClientRect()
+          if (rect.top <= 120 && rect.bottom >= 120) {
+            setActiveLink(link.href)
+          }
+        })
+      }
+
+      window.addEventListener("scroll", handleScroll)
+      return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
+
 
   const navLinks = [
     { href: "#services", label: "Services" },
@@ -31,13 +51,19 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                {link.label}
-              </a>
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setActiveLink(link.href)}
+              className={`text-sm font-medium transition-colors ${
+                activeLink === link.href
+                  ? "text-primary border-b-2 border-primary pb-1"
+                  : "text-muted-foreground hover:text-primary"
+              }`}
+            >
+              {link.label}
+            </a>
+
             ))}
           </nav>
 
@@ -73,14 +99,21 @@ const Header = () => {
           >
             <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
-                >
-                  {link.label}
-                </a>
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => {
+                  setActiveLink(link.href)
+                  setIsMenuOpen(false)
+                }}
+                className={`text-base font-medium transition-colors py-2 ${
+                  activeLink === link.href
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary"
+                }`}
+              >
+                {link.label}
+              </a>
               ))}
               <a href={`tel:${PHONE_NUMBERS.primary}`} className="mt-2">
                 <Button variant="default" className="w-full gap-2">

@@ -156,7 +156,7 @@ const BookingForm = () => {
             </span>
             <h2 className="section-title text-foreground mb-4">
               Schedule Your{" "}
-              <span className="text-gradient">Service Visit</span>
+              <span className="text-primary">Service Visit</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               Fill out the form and our team will get back to you within 30 minutes. Or reach us instantly via phone or WhatsApp.

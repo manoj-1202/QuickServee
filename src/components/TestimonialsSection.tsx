@@ -18,7 +18,7 @@ const TestimonialsSection = () => {
             Customer Reviews
           </span>
           <h2 className="section-title text-foreground mb-4">
-            Trusted by <span className="text-gradient">500+ Customers</span>
+            Trusted by <span className="text-primary">500+ Customers</span>
           </h2>
           <p className="section-subtitle mx-auto">
             See what our customers in Coimbatore have to say about QuickServe.
