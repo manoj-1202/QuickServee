@@ -78,6 +78,24 @@ const BookingForm = () => {
         throw error;
       }
 
+      // nodemailer
+          await fetch("http://localhost:5000/send-booking-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        customerName: formData.customerName,
+        phoneNumber: formData.phoneNumber,
+        location: formData.location,
+        service: formData.service,
+        problemDescription: formData.problemDescription,
+        preferredDate: formData.preferredDate,
+        preferredTime: formData.preferredTime,
+      }),
+    });
+
+
       setIsSuccess(true);
       toast({
         title: "Booking Submitted!",
