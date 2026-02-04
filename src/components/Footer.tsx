@@ -1,7 +1,10 @@
-import { Phone, MessageCircle, MapPin } from "lucide-react";
+import { useState } from "react";
+import { Phone, MessageCircle, MapPin, Settings } from "lucide-react";
 import { BUSINESS, PHONE_NUMBERS, WHATSAPP_LINKS, SERVICES } from "@/lib/constants";
+import AdminLoginDialog from "./AdminLoginDialog";
 
 const Footer = () => {
+  const [isAdminDialogOpen, setIsAdminDialogOpen] = useState(false);
   const currentYear = new Date().getFullYear();
 
   return (
@@ -25,12 +28,18 @@ const Footer = () => {
               <a href={`tel:${PHONE_NUMBERS.primary}`} className="w-8 h-8 xs:w-10 xs:h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
                 <Phone className="w-4 h-4 xs:w-5 xs:h-5" />
               </a>
-              <a href={WHATSAPP_LINKS.primary} target="_blank" rel="noopener noreferrer" className="w-8 h-8 xs:w-10 xs:h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition-colors">
+              <a href={WHATSAPP_LINKS.primary} target="_blank" rel="noopener noreferrer" className="w-8 h-8 xs:w-10 xs:h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors">
                 <MessageCircle className="w-4 h-4 xs:w-5 xs:h-5" />
               </a>
+              <button
+                onClick={() => setIsAdminDialogOpen(true)}
+                className="w-8 h-8 xs:w-10 xs:h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
+                aria-label="Admin login"
+              >
+                <Settings className="w-4 h-4 xs:w-5 xs:h-5" />
+              </button>
             </div>
           </div>
-
           {/* Services */}
           <div>
             <h4 className="font-display font-semibold text-white mb-3 xs:mb-4 text-sm xs:text-base">Our Services</h4>
@@ -87,6 +96,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      <AdminLoginDialog open={isAdminDialogOpen} onOpenChange={setIsAdminDialogOpen} />
     </footer>
   );
 };
