@@ -54,7 +54,7 @@ const HeroSection = () => {
             </h1>
 
             {/* Subtext */}
-            <p className="text-sm xs:text-base sm:text-lg md:text-xl text-muted-foreground text-white mb-5 xs:mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="text-sm xs:text-base sm:text-lg md:text-xl text-white/90 mb-5 xs:mb-8 max-w-xl mx-auto lg:mx-0 drop-shadow-md">
               One Call Connects you to Trusted AC, Washing Machine, Fridge, TV, Electrician, CCTV, and Mobile repair Professionals in Coimbatore.
             </p>
 
