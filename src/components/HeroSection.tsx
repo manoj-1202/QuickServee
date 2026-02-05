@@ -13,13 +13,12 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-[100svh] flex items-center pt-16 xs:pt-20 md:pt-0 overflow-hidden">
-      {/* Background Pattern */}
-    <div
-      className="absolute inset-0 bg-cover bg-center"
-      style={{ backgroundImage: `url(${home})` }}
-    />
-
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
+      {/* Background Image with Dark Overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${home})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/40" />
       
       {/* Decorative Elements - Hidden on very small screens */}
       <div className="hidden xs:block absolute top-1/4 right-1/4 w-32 xs:w-48 md:w-64 h-32 xs:h-48 md:h-64 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
