@@ -7,6 +7,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingCTAButtons from "@/components/FloatingCTAButtons";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       </main>
       <Footer />
       <FloatingCTAButtons />
+      <BackToTop />
     </div>
   );
 };
