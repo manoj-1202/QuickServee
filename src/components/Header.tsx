@@ -44,19 +44,19 @@ const Header = () => {
 
 
       {/* Logo */}
-      <a href="/" className="flex items-center gap-2">
+      <a href="/" className="flex items-center gap-1 xs:gap-1.5 md:gap-2">
         {/* Left Icon */}
         <img
           src={logo}
           alt="QuickServee Icon"
-          className="w-16 h-16 sm:w-12 sm:h-12 object-contain"
+          className="w-9 h-9 xs:w-10 xs:h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 object-contain"
         />
 
         {/* Right Text Logo */}
         <img
           src={slogan}
           alt="QuickServee"
-          className="h-16 sm:h-18 object-contain"
+          className="h-8 xs:h-9 sm:h-10 md:h-12 max-w-[120px] xs:max-w-[140px] sm:max-w-[160px] md:max-w-none object-contain"
         />
       </a>
 
