@@ -39,26 +39,31 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="container mx-auto px-1">
 
 
-      {/* Logo */}
-      <a href="/" className="flex items-center gap-1 xs:gap-1.5 md:gap-2">
-        {/* Left Icon */}
-        <img
-          src={logo}
-          alt="QuickServee Icon"
-          className="w-9 h-9 xs:w-10 xs:h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 object-contain"
-        />
+<div className="flex items-center justify-between h-20 md:h-20 lg:h-20">
 
-        {/* Right Text Logo */}
-        <img
-          src={slogan}
-          alt="QuickServee"
-          className="h-8 xs:h-9 sm:h-10 md:h-12 max-w-[120px] xs:max-w-[140px] sm:max-w-[160px] md:max-w-none object-contain"
-        />
-      </a>
+{/* Logo */}
+<a href="/" className="flex items-center ">
+  {/* Left Icon */}
+  <img
+    src={logo}
+    alt="QuickServee Icon"
+    className="w-24 h-24 md:w-36 md:h-36 lg:w-36 lg:h-36 object-contain"
+  />
+
+  {/* Right Text Logo */}
+  <div className="flex flex-col leading-none">
+    <span className="font-display font-bold text-2xl md:text-3xl lg:text-3xl text-foreground ">
+      QuickServee
+    </span>
+
+    <span className="hidden md:block text-sm text-muted-foreground font-thin ml-5">
+      One Call Every Service
+    </span>
+    </div>
+    </a>
 
 
           {/* Desktop Navigation */}

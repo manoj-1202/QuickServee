@@ -8,13 +8,13 @@ export const BUSINESS = {
 };
 
 export const PHONE_NUMBERS = {
-  primary: "6383338383",
-  secondary: "7448383350",
+  primary: "7448383350",
+  secondary: "6383338383",
 };
 
 export const WHATSAPP_LINKS = {
-  primary: `https://wa.me/91${PHONE_NUMBERS.primary}?text=${encodeURIComponent("Hi, I need help with electronic repair services.")}`,
-  secondary: `https://wa.me/91${PHONE_NUMBERS.secondary}?text=${encodeURIComponent("Hi, I need help with electronic repair services.")}`,
+  primary: `https://wa.me/91${PHONE_NUMBERS.primary}?text=${encodeURIComponent("Hi, I Need To Book Service With QuickServee.")}`,
+  secondary: `https://wa.me/91${PHONE_NUMBERS.secondary}?text=${encodeURIComponent("Hi, I Need To Book Service With QuickServee.")}`,
 };
 
 export const SERVICES = [

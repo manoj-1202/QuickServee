@@ -80,17 +80,22 @@ const BookingForm = () => {
 
       // Send email notification to admin (email is configured server-side)
       try {
-        await supabase.functions.invoke("send-booking-notification", {
-          body: {
-            customerName: formData.customerName.trim(),
-            phoneNumber: formData.phoneNumber.trim(),
-            location: formData.location.trim(),
-            service: formData.service,
-            problemDescription: formData.problemDescription?.trim(),
-            preferredDate: formData.preferredDate,
-            preferredTime: formData.preferredTime,
-          },
-        });
+      await fetch("https://qucikserve-backend.onrender.com/send-booking-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          customerName: formData.customerName.trim(),
+          phoneNumber: formData.phoneNumber.trim(),
+          location: formData.location.trim(),
+          service: formData.service,
+          problemDescription: formData.problemDescription?.trim(),
+          preferredDate: formData.preferredDate,
+          preferredTime: formData.preferredTime,
+        }),
+      });
+
       } catch (emailError) {
         // Don't fail the booking if email fails - logged server-side
       }
