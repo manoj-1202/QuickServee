@@ -55,7 +55,7 @@ const Header = () => {
 
   {/* Right Text Logo */}
   <div className="flex flex-col leading-none">
-    <span className="font-cormorant font-bold text-2xl md:text-3xl lg:text-4xl text-foreground ">
+    <span className="font-cormorant font-bold text-4xl md:text-4xl lg:text-4xl text-foreground ">
       QuickServee
     </span>
 
