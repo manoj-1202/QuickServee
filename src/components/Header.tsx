@@ -55,11 +55,11 @@ const Header = () => {
 
   {/* Right Text Logo */}
   <div className="flex flex-col leading-none">
-    <span className="font-display font-bold text-2xl md:text-3xl lg:text-3xl text-foreground ">
+    <span className="font-cormorant font-bold text-2xl md:text-3xl lg:text-4xl text-foreground ">
       QuickServee
     </span>
 
-    <span className="hidden md:block text-sm text-muted-foreground font-thin ml-5">
+    <span className="hidden md:block text-sm text-muted-foreground font-thin ml-4">
       One Call Every Service
     </span>
     </div>

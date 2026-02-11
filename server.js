@@ -1,3 +1,10 @@
+//////// Having seperate server.js in github named quickserve Backend 
+                           //This is dummy  
+
+//                            # BREVO gmail key 
+// BREVO_API_KEY=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
+// BREVO_SENDER_EMAIL=ttsapplications2025@gmail.com
+
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
