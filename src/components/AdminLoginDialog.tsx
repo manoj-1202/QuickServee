@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface AdminLoginDialogProps {
   open: boolean;
@@ -13,6 +14,7 @@ interface AdminLoginDialogProps {
 }
 
 const AdminLoginDialog = ({ open, onOpenChange }: AdminLoginDialogProps) => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -74,8 +76,8 @@ const AdminLoginDialog = ({ open, onOpenChange }: AdminLoginDialogProps) => {
         setEmail("");
         setPassword("");
         
-        // Redirect to admin dashboard
-        window.location.href = "/admin";
+        // Navigate within SPA to avoid production hard-refresh 404 issues.
+        navigate("/admin");
       }
     } catch (error) {
       toast({
