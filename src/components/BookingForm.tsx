@@ -78,27 +78,35 @@ const BookingForm = () => {
         throw error;
       }
 
-      // Send email notification to admin (email is configured server-side)
-      try {
-      await fetch("https://qucikserve-backend.onrender.com/send-booking-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          customerName: formData.customerName.trim(),
-          phoneNumber: formData.phoneNumber.trim(),
-          location: formData.location.trim(),
-          service: formData.service,
-          problemDescription: formData.problemDescription?.trim(),
-          preferredDate: formData.preferredDate,
-          preferredTime: formData.preferredTime,
-        }),
-      });
+      // Fire email in background so UI is not blocked by backend latency/cold starts.
+      const emailPayload = {
+        customerName: formData.customerName.trim(),
+        phoneNumber: formData.phoneNumber.trim(),
+        location: formData.location.trim(),
+        service: formData.service,
+        problemDescription: formData.problemDescription?.trim(),
+        preferredDate: formData.preferredDate,
+        preferredTime: formData.preferredTime,
+      };
 
-      } catch (emailError) {
-        // Don't fail the booking if email fails - logged server-side
-      }
+      void (async () => {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 8000);
+        try {
+          await fetch("https://qucikserve-backend.onrender.com/send-booking-email", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(emailPayload),
+            signal: controller.signal,
+          });
+        } catch (emailError) {
+          // Don't fail the booking if email fails or times out.
+        } finally {
+          clearTimeout(timeout);
+        }
+      })();
 
 
       setIsSuccess(true);
