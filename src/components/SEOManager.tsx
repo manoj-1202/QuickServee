@@ -42,7 +42,7 @@ const SEOManager = () => {
     const ogUrl = getOrCreateOgMeta("og:url");
 
     if (location.pathname === "/") {
-      document.title = "QuickServee Coimbatore | AC, TV, Fridge, Washing Machine & Electrical Service";
+      document.title = "QuickServee Coimbatore | AC, Fridge, Washing Machine & Electrical Service";
       robots.setAttribute(
         "content",
         "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",

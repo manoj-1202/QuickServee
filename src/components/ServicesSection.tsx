@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const iconMap = {
   Snowflake,
-  Tv,
+  // Tv,
   Zap,
   Camera,
   Smartphone,

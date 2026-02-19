@@ -36,12 +36,12 @@ export const SERVICES = [
     description: "Expert refrigerator installation, servicing, and repair for all brands including single-door, double-door, and side-by-side models.",
     icon: "Refrigerator",
   },
-  {
-    id: "tv-repair",
-    name: "TV Repair",
-    description: "Professional repair services for LED, LCD, OLED, and Smart TVs. Panel repairs, board replacements, and software updates.",
-    icon: "Tv",
-  },
+  // {
+  //   id: "tv-repair",
+  //   name: "TV Repair",
+  //   description: "Professional repair services for LED, LCD, OLED, and Smart TVs. Panel repairs, board replacements, and software updates.",
+  //   icon: "Tv",
+  // },
   {
     id: "electrical",
     name: "Electrical Services",
@@ -109,7 +109,7 @@ export const HOW_IT_WORKS = [
   {
     step: 1,
     title: "Choose Your Service",
-    description: "Select from our range of electronic services - AC, TV, Electrical, CCTV, or Mobile/Laptop repair.",
+    description: "Select from our range of electronic services - AC, Electrical, CCTV, or Mobile/Laptop repair.",
   },
   {
     step: 2,

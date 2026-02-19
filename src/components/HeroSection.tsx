@@ -56,7 +56,7 @@ const HeroSection = () => {
 
             {/* Subtext */}
             <p className="text-sm xs:text-base sm:text-lg md:text-xl text-muted-foreground text-white mb-5 xs:mb-8 max-w-xl mx-auto lg:mx-0">
-              One Call Connects you to Trusted AC, Washing Machine, Fridge, TV, Electrician, CCTV, and Mobile repair Professionals in Coimbatore.
+              One Call Connects you to Trusted AC, Washing Machine, Fridge, Electrician and CCTV, Professionals in Coimbatore.
             </p>
 
             {/* Features - Scrollable on mobile */}
